@@ -7,7 +7,7 @@ export default async function Profile() {
     const { isAuthenticated } = getKindeServerSession();
 
     if (!(await isAuthenticated())) {
-        redirect("/api/auth/login?post_login_redirect_url=/protected");
+        redirect("/api/auth/login?post_login_redirect_url=/profile");
     }
 
     return (
