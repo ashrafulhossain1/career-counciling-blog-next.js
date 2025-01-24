@@ -12,9 +12,7 @@ const Navbar = async () => {
     </>
 
 
-    // const handleSignOut = ()=>{
-    //     console.log('ohh')
-    // }
+    
     return (
         <div className="navbar bg-base-100">
             <div className="navbar-start">
