@@ -1,12 +1,20 @@
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import Link from "next/link";
 
-const Navbar = () => {
+const Navbar = async () => {
+    const { getUser } = getKindeServerSession()
+    const user = await getUser()
+    console.log(!!user)
 
     const links = <>
         <li><Link href='/'>Home</Link></li>
         <li><Link href='/profile'>profile</Link></li>
-        <li><Link href='/about'>about</Link></li>
     </>
+
+
+    // const handleSignOut = ()=>{
+    //     console.log('ohh')
+    // }
     return (
         <div className="navbar bg-base-100">
             <div className="navbar-start">
@@ -31,17 +39,31 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">daisyUI</a>
+                <a className="btn btn-ghost text-xl">CouncilPro</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                     {links}
                 </ul>
             </div>
-            <div className="navbar-end">
-                <a className="btn">Button</a>
+            <div className="navbar-end gap-2">
+                {!!user ? <>
+                    <Link href='/api/auth/logout' className="btn btn-sm bg-black hover:bg-gray-800 text-white hover:text-slate-50">
+                        Sign Out
+                    </Link>
+                </>
+                    :
+                    <>
+                        <Link href='/api/auth/login' className="btn btn-sm bg-black hover:bg-gray-800 text-white hover:text-slate-50">
+                            Sign In
+                        </Link>
+                        <Link href='/api/auth/register' className="btn btn-sm bg-black hover:bg-gray-800 text-white hover:text-slate-50">
+                            Sign up
+                        </Link>
+                    </>
+                }
             </div>
-        </div>
+        </div >
     );
 };
 

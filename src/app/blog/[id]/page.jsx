@@ -16,9 +16,9 @@ const BlogDetails = () => {
     if (!post) return <div className="text-center text-xl"><span className="loading loading-bars loading-lg"></span></div>;
 
     return (
-        <div className="w-full md:w-3/4 mx-auto p-6 bg-white rounded-lg shadow-lg mt-6">
-            <h2 className="text-4xl font-bold text-gray-800 mb-6">{post.title}</h2>
-            <p className="text-lg text-gray-600 mb-6">
+        <div className="w-full md:w-3/4 mx-auto p-6 bg-black text-slate-50 rounded-lg shadow-lg mt-6">
+            <h2 className="text-4xl font-bold text-gray-800 mb-6 capitalize">{post.title}</h2>
+            <p className="text-lg text-gray-600 mb-6 capitalize">
                 {post.body}
             </p>
             <div className="flex justify-between items-center mt-6 ">
