@@ -105,8 +105,3 @@ export default async function Profile() {
     );
 }
 
-// app/protected/page.tsx - Client Component
-
-// As of right now, this can't be done in Client Components because of how Next.js handles
-// navigation in client components with prefetching and caching.
-// But you can still achieve an automatic redirect with middleware
