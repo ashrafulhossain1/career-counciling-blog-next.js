@@ -28,7 +28,7 @@ export default async function Profile() {
                 </div>
             </div>
 
-            {/* Contact Information */}
+           
             <div className="p-6 bg-white">
                 <h3 className="text-lg font-semibold">Contact Information</h3>
                 <ul className="mt-2">
