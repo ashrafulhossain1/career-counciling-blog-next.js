@@ -95,12 +95,6 @@ export default async function Profile() {
                     </li>
                 </ul>
             </div>
-
-            {/* Footer */}
-            <footer className="p-6 bg-gray-200 text-center">
-                <p className="text-gray-600">Privacy Policy | Terms of Service</p>
-            </footer>
-
         </div>
     );
 }
